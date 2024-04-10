@@ -1,0 +1,16 @@
+.movies__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+}
+.movies__item{
+    flex-basis: calc((100% - 60px) / 3);
+}
+.movies__title{
+}
+.movies__img{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
