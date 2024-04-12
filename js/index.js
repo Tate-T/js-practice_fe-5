@@ -71,11 +71,37 @@ const movies = [
     },
 ];
 const moviesListEl = document.querySelector('.movies__list');
+const backdrop = document.querySelector('.backdrop');
+const modal = document.querySelector('.modal');
 
 movies.forEach(movie => moviesListEl.innerHTML += `
-<li class="movies__item">
+<li class="movies__item" data-name="${movie.name}">
     <h2 class="movies__title">${movie.name}</h2>
     <img class="movies__img" src="${movie.poster}" alt="poster ${movie.name}"/>
     <p class="movies__rate">${movie.rate}/10</p>
 </li>
 `);
+
+moviesListEl.addEventListener('click', (e) => {
+    // console.log(e.target.closest('.movies__item').childNodes[0])
+    // if (e.target.closest('.movies__item').childNodes) {
+    //     const movie = movies.find(movie => movie.name === e.target.closest('.movies__item').childNodes[1].innerHTML);
+    //     backdrop.classList.remove('hidden')
+    //     modalTitleEl.innerHTML = movie.name;
+    //     modalYearEl.innerHTML = movie.year;
+    //     modalStorylineEl.innerHTML = movie.stotyline;
+    //     console.log('ee', movies.find(movie => movie.name === e.target.closest('.movies__item').childNodes[1].innerHTML))
+    // }
+    const findMovie = e.target.closest('.movies__item') === null ? false : e.target.closest('.movies__item').dataset.name;
+    if (findMovie) {
+        const movie = movies.find(movie => movie.name === findMovie);
+        backdrop.classList.remove('hidden')
+        modal.innerHTML = `
+            <h2 class="modal__title">${movie.name}</h2>
+            <p class="modal__year">Year: ${movie.year}</p>
+            <p class="modal__storyline">Storyline: ${movie.stotyline}</p>
+        `
+    }
+});
+
+backdrop.addEventListener('click', () => backdrop.classList.add('hidden'))
