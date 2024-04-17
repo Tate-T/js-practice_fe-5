@@ -83,15 +83,6 @@ movies.forEach(movie => moviesListEl.innerHTML += `
 `);
 
 moviesListEl.addEventListener('click', (e) => {
-    // console.log(e.target.closest('.movies__item').childNodes[0])
-    // if (e.target.closest('.movies__item').childNodes) {
-    //     const movie = movies.find(movie => movie.name === e.target.closest('.movies__item').childNodes[1].innerHTML);
-    //     backdrop.classList.remove('hidden')
-    //     modalTitleEl.innerHTML = movie.name;
-    //     modalYearEl.innerHTML = movie.year;
-    //     modalStorylineEl.innerHTML = movie.stotyline;
-    //     console.log('ee', movies.find(movie => movie.name === e.target.closest('.movies__item').childNodes[1].innerHTML))
-    // }
     const findMovie = e.target.closest('.movies__item') === null ? false : e.target.closest('.movies__item').dataset.name;
     if (findMovie) {
         const movie = movies.find(movie => movie.name === findMovie);

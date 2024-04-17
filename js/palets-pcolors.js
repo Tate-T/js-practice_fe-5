@@ -1,4 +1,6 @@
-const palette = document.querySelector(".color-palette")
+const palette = document.querySelector(".color-palette");
+const info = document.querySelector(".color-info");
+let currentColor = '';
 const colors = [
     { hex: '#f44336', rgb: '244,67,54' },
     { hex: '#e91e63', rgb: '233,30,99' },
@@ -15,11 +17,12 @@ const colors = [
     { hex: '#607d8b', rgb: '96,125,139' },
 ];
 
-const paletteColors = colors.map((item) => {
-    const everyColorPelette = document.createElement("div")
-    everyColorPelette.style.backgroundColor = item.rgb
-    everyColorPelette.style.border = item.hex
-    everyColorPelette.style.width = "40px"
-    everyColorPelette.style.height = "40px"
-    return everyColorPelette
-})
+colors.forEach(color => palette.innerHTML += `
+    <li class="color-pallete__item" style="background-color: ${color.hex};"></li>
+`);
+
+palette.addEventListener('click', (e) => {
+    currentColor = colors.find(color => color.rgb === e.target.style.backgroundColor.slice(4, -1).replaceAll(' ', '')).hex;
+    info.innerHTML = `Selected color: ${currentColor}`
+    info.style.color = currentColor;
+});
