@@ -7,11 +7,26 @@
     <link rel="stylesheet" href="./styles/palette.css">
 </head>
 <body>
-    <!-- 2-task -->
-    <p class="output">Selected color: -</p>
-    <div class="color-palette">
-        
+    <a href="./index.html">back to main</a>
+   
+    <!-- 3-task -->
+
+    <div id="graph" style="background-color: aliceblue;">
+        <svg width="500" height="300">
+            <circle id="point" cx="50" cy="50" r="5" fill="blue" />
+        </svg>
     </div>
+    <span id="coord"></span>
+
+    <!-- 4-task -->
+    <input type="text" id="filter-input">
+    <ul class="result-list"></ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <script type="module" src="./js/events.js"></script>
 
     <script type="module" src="./js/palets-pcolors.js"></script>
 </body>
