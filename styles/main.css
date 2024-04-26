@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
 }
+/*
 .movies__list{
     display: flex;
     flex-wrap: wrap;
@@ -9,9 +10,9 @@
 }
 .movies__item{
     padding: 15px;
-    flex-basis: calc((100% - 60px) / 3);
+    flex-basis: calc((100% - 60px) / 3); */
     /* border: 3px solid skyblue; */
-    border-radius: 20px;
+    /* border-radius: 20px;
     box-shadow: 5px 5px 11px 0px rgba(80, 228, 242, 1);
 }
 .movies__img{
@@ -46,4 +47,25 @@
     padding: 20px;
     border: 2px solid green;
     border-radius: 30px;
+} */
+
+/* 5-task */
+#todo-list{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+#todo-item{
+    display: flex;
+    gap: 0 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    width: max-content;
+    background-color: azure;
+    transition: all 0.2s;
+}
+#todo-text{
+    margin: 0;
 }
